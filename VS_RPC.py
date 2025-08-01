@@ -11,8 +11,6 @@ if not hasattr(net, "shunt_characteristic_table"):
         "id_characteristic", "step", "p_mw_char", "q_mvar_char", "vm_pu"
     ])
 
-
-
 # Step 2: Run initial power flow
 pp.runpp(net)
 print("Initial Bus Voltages (p.u.):")
@@ -81,3 +79,4 @@ if initial_voltage < 0.95:
         print(f"\n⚠️  Reached Q={q_inject} MVar but voltage stayed at {voltage:.4f} p.u.")
 else:
     print(f"\nℹ️  No compensation applied — voltage already within acceptable range: {initial_voltage:.4f} p.u.")
+
